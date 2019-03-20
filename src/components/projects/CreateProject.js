@@ -54,4 +54,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+console.log('test');
+
 export default connect(null, mapDispatchToProps)(CreateProject)
