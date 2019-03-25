@@ -20,7 +20,9 @@ export const signOut = () => {
   return (dispatch, getState, {getFirebase}) => {
     const firebase = getFirebase()
 
-    firebase.auth().signOut().then(() => {
+    firebase.auth().signOut()
+    .then(() => {
+      firebase.logout() // stops permissions error when logging out
       dispatch({ type: 'SIGNOUT_SUCCESS'})
     })
   }
